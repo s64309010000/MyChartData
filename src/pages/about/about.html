@@ -1,11 +1,23 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="danger">
     <ion-title>
-      About
+      Chart แบบแท่ง
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+  <div>
+    <div style="display: block">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+    </div>
+    <button (click)="randomize()">ปรับปรุง</button>
+  </div>
 </ion-content>
